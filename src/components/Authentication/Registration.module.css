@@ -1,0 +1,5 @@
+.wrapper {
+    height: 500px;
+    width: 350px;
+    background-color: var(--basic_color);
+}
