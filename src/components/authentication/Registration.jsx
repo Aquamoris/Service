@@ -1,38 +1,28 @@
 import React, {useState} from 'react';
 import style from './Registration.module.css';
 import {Switch} from "@mui/material";
+import User from "./User";
 
-const Company = () => {
-    return (
-        <form>
-            <h3>Company</h3>
-        </form>
-    )
-}
-
-const User = () => {
-    return (
-        <form>
-            <h3>User</h3>
-        </form>
-    )
-}
-
-const Registration = () => {
-
+const Registration = (props) => {
     const [toggle, setToggle] = useState(false);
 
     const handleChange = (e) => {
         setToggle(!toggle);
-        console.log(e.target.checked);
     }
 
     return (
         <div className={style.wrapper}>
-
+            <span>User</span>
+            <span>
             <Switch onChange={handleChange} color="default" checked={toggle}/>
+            </span>
+            <span>Company</span>
 
-            { toggle ? Company() : User() }
+            {
+                toggle
+                ? <h3>Company</h3>
+                : <User users={props.users} registrationNewUser={props.registrationNewUser}/>
+            }
 
         </div>
     );

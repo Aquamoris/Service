@@ -8,9 +8,20 @@ const Header = (props) => {
     const links = state.links;
     const authButtons = state.auth;
 
+    const changeUser = (e) => {
+        props.changeUser(e.target.innerHTML);
+    }
+
     return (
         <div className={style.header}>
             <div className={style.wrapper}>
+                <div>
+                    { props.header.userManagement.map(e => (
+                        <button onClick={changeUser}
+                            className={e === props.auth ? style.active : '' }>
+                            {e}</button>
+                    )) }
+                </div>
                 <div className={style.linksWrapper}>
                     { links.map(e => (
                         <NavLink key={e.id} to={e.url}>{e.title}</NavLink>
