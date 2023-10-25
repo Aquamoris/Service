@@ -9,18 +9,19 @@ const Header = (props) => {
     const authButtons = state.auth;
 
     const changeUser = (e) => {
-        props.changeUser(e.target.innerHTML);
+        props.changeUser(e.target.id);
     }
 
     return (
         <div className={style.header}>
             <div className={style.wrapper}>
                 <div>
-                    { props.header.userManagement.map(e => (
+                    {props.header.userManagement.map(e => (
                         <button onClick={changeUser}
-                            className={e === props.auth ? style.active : '' }>
-                            {e}</button>
-                    )) }
+                                id={e.id}
+                                className={e.id === props.auth ? style.active : ''}>
+                            {e.title}</button>
+                    ))}
                 </div>
                 <div className={style.linksWrapper}>
                     { links.map(e => (
