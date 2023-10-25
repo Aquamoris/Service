@@ -46,7 +46,7 @@ const Header = (props) => {
                 </div>
                 <div className={style.linksWrapper}>
                     { links.map(e => (
-                        <NavLink key={e.id} to={prefix + e.url}>{e.title}</NavLink>
+                        <NavLink key={e.id} to={e.url}>{e.title}</NavLink>
                     )) }
                 </div>
                 <div className={style.buttonsWrapper}>

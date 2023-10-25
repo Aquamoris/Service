@@ -1,8 +1,8 @@
 const initialState = {
     userManagement: [
         {id: 'unknown', title: 'Неавторизованный', url: '/'},
-        {id: 'employee', title: 'Сотрудник', url: '/employee'},
-        {id: 'company', title: 'Компания', url: '/company'}
+        {id: 'employee', title: 'Сотрудник', url: '/employee/'},
+        {id: 'company', title: 'Компания', url: '/company/'}
     ],
     links: [
         {id: 1, title: 'Главная', url: '/'},
