@@ -28,7 +28,17 @@
     justify-content: space-around;
 }
 
+.changeUser {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 12px;
+    padding: 6px 12px;
+    border: thin solid var(--contrast_color);
+    border-radius: 12px;
+    color: var(--contrast_color);
+}
+
 .active {
-    background-color: greenyellow;
+    background-color: var(--contrast_color);
+    color: var(--emphasis_color);
 }
 

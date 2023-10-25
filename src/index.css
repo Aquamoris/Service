@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
-    --basic_color: #6096B4;
-    --first_complementary_color: #93BFCF;
-    --second_complementary_color: #BDCDD6;
+    --contrast_color_2: #6096B4;
+    --contrast_color: #4c83a8;
+    --basic_color: #93BFCF;
+    --complementary_color: #BDCDD6;
     --emphasis_color: #EEE9DA;
 }
 

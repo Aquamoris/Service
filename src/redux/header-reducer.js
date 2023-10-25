@@ -1,15 +1,26 @@
 const initialState = {
     userManagement: [
-        {id: 'unknown', title: 'Неавторизованный'},
-        {id: 'employee', title: 'Сотрудник'},
-        {id: 'company', title: 'Компания'}
+        {id: 'unknown', title: 'Неавторизованный', url: '/'},
+        {id: 'employee', title: 'Сотрудник', url: '/employee'},
+        {id: 'company', title: 'Компания', url: '/company'}
     ],
     links: [
         {id: 1, title: 'Главная', url: '/'},
-        // {id: 2, title: 'Регистрация компании', url: '/registration/company'},
-        // {id: 3, title: 'Авторизация компании', url: '/authorization/company'},
-        // {id: 4, title: 'Регистрация пользователя', url: '/registration/user'},
-        // {id: 5, title: 'Авторизация пользователя', url: '/authorization/user'},
+        {id: 2, title: 'Вакансии', url: '/vacancies'},
+        {id: 3, title: 'Компании', url: '/companies'},
+        {id: 4, title: 'Профиль', url: '/profile'}
+    ],
+    employeeLinks: [
+        {id: 1, title: 'Главная', url: '/employee/'},
+        {id: 2, title: 'Вакансии', url: '/employee/vacancies'},
+        {id: 3, title: 'Избранное', url: '/employee/favorites'},
+        {id: 4, title: 'Профиль', url: '/employee/profile'}
+    ],
+    companyLinks: [
+        {id: 1, title: 'Главная', url: '/company/'},
+        {id: 2, title: 'Сотрудники', url: '/company/employees'},
+        {id: 3, title: 'Избранное', url: '/company/favorites'},
+        {id: 4, title: 'Профиль', url: '/company/profile'}
     ],
     auth: [
         {id: 1, title: 'Регистрация', url: '/registration'},

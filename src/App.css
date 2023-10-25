@@ -1,7 +1,7 @@
 .App {
     width: 1366px;
     margin: 0 auto;
-    background-color: var(--second_complementary_color);
+    background-color: var(--complementary_color);
     height: 100vh;
 }
 
