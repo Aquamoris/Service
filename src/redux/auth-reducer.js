@@ -1,7 +1,8 @@
 const CHANGE_USER = 'CHANGE_USER';
 
 let initialState = {
-    user: 'unknown'
+    user: 'unknown',
+    
 }
 
 const authReducer = (state = initialState, action) => {

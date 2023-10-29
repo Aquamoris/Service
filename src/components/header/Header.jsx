@@ -6,23 +6,21 @@ const Header = (props) => {
     const state = props.header;
 
     let links = state.links;
-    let authContent = state.auth.map(e => (
-        <NavLink key={e.id} to={e.url}>
-            <button>
-                {e.title}
-            </button>
-        </NavLink> ))
-
-    let prefix = '';
+    let authContent;
 
     if (props.auth === 'employee') {
-        prefix = 'employee';
         links = state.employeeLinks;
-        authContent = props.auth;
+        authContent = <NavLink to={'/employee/profile'}>{props.auth}</NavLink>;
     } else if (props.auth === 'company') {
-        prefix = 'company'
         links = state.companyLinks;
-        authContent = props.auth;
+        authContent = <NavLink to={'/company/profile'}>{props.auth}</NavLink>;
+    } else {
+        authContent = state.auth.map(e => (
+            <NavLink key={e.id} to={e.url}>
+                <button>
+                    {e.title}
+                </button>
+            </NavLink> ));
     }
 
     const changeUser = (e) => {

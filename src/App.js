@@ -1,7 +1,8 @@
 import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import HeaderContainer from "./components/header/HeaderContainer";
-import NotFound from "./pages/NotFound";
+import NotFound from "./components/NotFound";
+import Main from "./pages/main/Main";
 
 const App = () => {
     return (
@@ -9,9 +10,9 @@ const App = () => {
                 <HeaderContainer/>
                      <div className="App">
                          <Routes>
-                             <Route path='/' element={<h3>Hello</h3>}/>
-                             <Route path='/employee' element={<h3>Hello</h3>}/>
-                             <Route path='/company' element={<h3>Hello</h3>}/>
+                             <Route path='/' element={<Main />}/>
+                             <Route path='/employee' element={<Main />}/>
+                             <Route path='/company' element={<Main />}/>
                              <Route path='*' element={<NotFound />}/>
                          </Routes>
                      </div>
