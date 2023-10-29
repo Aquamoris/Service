@@ -6,12 +6,14 @@ import authReducer from "./auth-reducer";
 import companiesReducer from "./companies-reducer";
 import vacanciesReducer from "./vacansies-reducer";
 import tagsReducer from "./tags-reducer";
+import resumesReducer from "./resumes-reducer";
 
 let reducers = combineReducers({
     header: headerReducer,
     usersData: usersReducer,
     companiesData: companiesReducer,
     vacanciesData: vacanciesReducer,
+    resumesData: resumesReducer,
     tagsData: tagsReducer,
     authData: authReducer
 });
