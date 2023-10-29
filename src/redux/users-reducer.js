@@ -2,22 +2,50 @@ import moment from "moment";
 
 const REGISTRATION_NEW_USER = 'REGISTRATION_NEW_USER';
 
-let initialState = {
+const initialState = {
     users: [
         {
             id: 0,
-            username: 'user1',
+            username: 'Соискатель 1',
             email: 'bla@bla.com',
             password: 'qwerty',
-            location: 'Vladivostok',
-            disableCategory: 3,
+            location: 'Владивосток',
+            disableCategory: 2,
             avatar: 'https://cdn-icons-png.flaticon.com/512/6596/6596121.png',
             favorites: [],
             jobInvites: [],
             employeeTag: [],
-            createdAt: '0',
-            updatedAt: '0'
-        }
+            createdAt: moment(),
+            updatedAt: null,
+        },
+        {
+            id: 1,
+            username: 'Соискатель 2',
+            email: 'admin@admin.com',
+            password: 'admin',
+            location: 'Владивосток',
+            disableCategory: 1,
+            avatar: 'https://cdn-icons-png.flaticon.com/512/6596/6596121.png',
+            favorites: [],
+            jobInvites: [],
+            employeeTag: [],
+            createdAt: moment(),
+            updatedAt: null,
+        },
+        {
+            id: 2,
+            username: 'Соискатель 3',
+            email: 'blablabla@bla.com',
+            password: 'qwerty12345',
+            location: 'Владивосток',
+            disableCategory: 1,
+            avatar: 'https://cdn-icons-png.flaticon.com/512/6596/6596121.png',
+            favorites: [],
+            jobInvites: [],
+            employeeTag: [],
+            createdAt: moment(),
+            updatedAt: null,
+        },
     ]
 }
 

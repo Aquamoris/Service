@@ -2,7 +2,12 @@ const CHANGE_USER = 'CHANGE_USER';
 
 let initialState = {
     user: 'unknown',
-    
+    userData: {
+        id: null,
+        username: null,
+        email: null,
+
+    }
 }
 
 const authReducer = (state = initialState, action) => {
