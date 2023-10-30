@@ -1,8 +1,10 @@
 import moment from "moment";
 
 const REGISTRATION_NEW_USER = 'REGISTRATION_NEW_USER';
+const CHECK_USER = 'CHECK_USER';
 
 const initialState = {
+    currentUser: null,
     users: [
         {
             id: 0,
@@ -21,7 +23,7 @@ const initialState = {
         {
             id: 1,
             username: 'Соискатель 2',
-            email: 'admin@admin.com',
+            email: 'admin@admin',
             password: 'admin',
             location: 'Владивосток',
             disableCategory: 1,
@@ -69,10 +71,29 @@ const usersReducer = (state = initialState, action) => {
                     updatedAt: null
                 }]
             }
+        case CHECK_USER:
+            for (let user of state.users) {
+                    if (user.email === action.email && user.password === action.password) {
+                        return {
+                            ...state,
+                            currentUser: user
+                        };
+                    }
+                }
+            return {
+                ...state
+            };
         default:
             return state
     }
 }
+
+export const checkUser = (email, password) => (
+    {
+        type: CHECK_USER,
+        email, password
+    }
+)
 
 export const registrationNewUser = (username, email, password) => (
     {

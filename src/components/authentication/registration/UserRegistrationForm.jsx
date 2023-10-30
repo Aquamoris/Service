@@ -1,17 +1,19 @@
-import React, {useEffect} from 'react';
+import React, {useState} from 'react';
 import {useFormik} from "formik";
 
-const UserRegistrationForm = (props) => {
+const UserRegistrationForm = () => {
+    const [showPassword, setShowPassword] = useState(false);
+
     const formik = useFormik({
         initialValues: {
             username: '',
             email: '',
-            password: '',
-            showPassword: false
+            password: ''
         },
-        onSubmit: values => {
-            console.log(values);
-        }
+        onSubmit: (values, {resetForm}) => {
+                console.log(values);
+                resetForm()
+            }
     })
 
     return (
@@ -35,15 +37,16 @@ const UserRegistrationForm = (props) => {
             <div>
                 <label htmlFor='password'>Пароль</label>
                 <input
-                    type={formik.values.showPassword ? 'text' : 'password'}
+                    type={showPassword ? 'text' : 'password'}
                     name='password'
                     onChange={formik.handleChange}
                     value={formik.values.password}/>
                 <input
                     onChange={() => {
-                        formik.values.showPassword = !formik.values.showPassword;
+                        setShowPassword(!showPassword);
                     }}
-                    type="checkbox"/>
+                    type="checkbox"
+                    value={showPassword}/>
             </div>
             <button type='submit'>Зарегистрироваться</button>
         </form>

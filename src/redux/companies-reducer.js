@@ -1,6 +1,9 @@
 import moment from "moment";
 
+const CHECK_COMPANY = 'CHECK_COMPANY';
+
 let initialState = {
+    currentCompany: null,
     companies: [
         {
             id: 0,
@@ -21,10 +24,10 @@ let initialState = {
         },
         {
             id: 1,
-            email: 'company@company.com',
+            email: 'company@company',
             name: 'Компания 2',
             fullName: 'ООО Компания 2',
-            password: 'company123',
+            password: 'company',
             description: null,
             location: 'Владивосток',
             specialization: 'Экономика',
@@ -59,9 +62,28 @@ let initialState = {
 
 const companiesReducer = (state = initialState, action) => {
     switch (action.type) {
+        case CHECK_COMPANY:
+            for (let company of state.companies) {
+                if (company.email === action.email && company.password === action.password) {
+                    return {
+                        ...state,
+                        currentCompany: company
+                    }
+                }
+            }
+            return {
+                ...state
+            };
         default:
             return state
     }
 }
+
+export const checkCompany = (email, password) => (
+    {
+        type: CHECK_COMPANY,
+        email, password
+    }
+)
 
 export default companiesReducer;

@@ -10,10 +10,10 @@ const Header = (props) => {
 
     if (props.auth === 'employee') {
         links = state.employeeLinks;
-        authContent = <NavLink to={'/employee/profile'}>{props.auth}</NavLink>;
+        authContent = <NavLink to={'/profile'}>{props.userData.username}</NavLink>;
     } else if (props.auth === 'company') {
         links = state.companyLinks;
-        authContent = <NavLink to={'/company/profile'}>{props.auth}</NavLink>;
+        authContent = <NavLink to={'/profile'}>{props.userData.name}</NavLink>;
     } else {
         authContent = state.auth.map(e => (
             <NavLink key={e.id} to={e.url}>
@@ -33,7 +33,8 @@ const Header = (props) => {
                 <div>
                     {props.header.userManagement.map(e => (
                         <Link to={e.url}>
-                            <button onClick={changeUser}
+                            <button disabled={true}
+                                onClick={changeUser}
                                     id={e.id}
                                     className={e.id === props.auth
                                         ? style.changeUser + ' ' + style.active
@@ -43,9 +44,12 @@ const Header = (props) => {
                     ))}
                 </div>
                 <div className={style.linksWrapper}>
-                    { links.map(e => (
-                        <NavLink key={e.id} to={e.url}>{e.title}</NavLink>
-                    )) }
+                    { links.map(e => {
+                        if (e.title === 'Избранное' || e.title === 'Ваши вакансии') {
+                            return <NavLink key={e.id} to={e.url + props.userData.id}>{e.title}</NavLink>
+                        }
+                        return <NavLink key={e.id} to={e.url}>{e.title}</NavLink>
+                    }) }
                 </div>
                 <div className={style.buttonsWrapper}>
                     { authContent }

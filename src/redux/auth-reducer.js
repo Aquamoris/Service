@@ -2,12 +2,7 @@ const CHANGE_USER = 'CHANGE_USER';
 
 let initialState = {
     user: 'unknown',
-    userData: {
-        id: null,
-        username: null,
-        email: null,
-
-    }
+    userData: null
 }
 
 const authReducer = (state = initialState, action) => {
@@ -15,13 +10,19 @@ const authReducer = (state = initialState, action) => {
         case CHANGE_USER:
             return {
                 ...state,
-                user: action.newUser
+                user: action.newType,
+                userData: action.newUser
             }
         default:
             return state;
     }
 }
 
-export const changeUser = (newUser) => ({type: CHANGE_USER, newUser});
+export const changeUser = (newType, newUser) => (
+    {
+        type: CHANGE_USER,
+        newType, newUser
+    }
+);
 
 export default authReducer;

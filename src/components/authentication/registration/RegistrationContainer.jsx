@@ -1,7 +1,7 @@
 import {connect} from "react-redux";
 import {compose} from "redux";
 import Registration from "./Registration";
-import {registrationNewUser} from "../../redux/users-reducer";
+import {registrationNewUser} from "../../../redux/users-reducer";
 
 let mapStateToProps = (state) => {
     return {

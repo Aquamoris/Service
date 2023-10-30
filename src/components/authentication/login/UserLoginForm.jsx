@@ -1,53 +1,53 @@
-import React, {useEffect} from 'react';
+import React, {useState} from 'react';
 import {useFormik} from "formik";
 
-const UserRegistrationForm = (props) => {
+const UserLoginForm = (props) => {
+    const [showPassword, setShowPassword] = useState(false);
+
     const formik = useFormik({
         initialValues: {
-            username: '',
             email: '',
             password: '',
-            showPassword: false
         },
-        onSubmit: values => {
-            console.log(values);
+        onSubmit: (values, {resetForm}) => {
+            props.checkUser(values.email, values.password);
+            if (props.currentUser) {
+                props.changeUser('employee', props.currentUser);
+                resetForm();
+            } else {
+                alert('Данный пользователь не существует');
+            }
         }
     })
 
     return (
         <form onSubmit={formik.handleSubmit}>
             <div>
-                <label htmlFor='username'>Псевдоним</label>
-                <input
-                    type='text'
-                    name='username'
-                    onChange={formik.handleChange}
-                    value={formik.values.username}/>
-            </div>
-            <div>
                 <label htmlFor='email'>Почта</label>
                 <input
                     type='email'
                     name='email'
+                    autoFocus={true}
                     onChange={formik.handleChange}
                     value={formik.values.email}/>
             </div>
             <div>
                 <label htmlFor='password'>Пароль</label>
                 <input
-                    type={formik.values.showPassword ? 'text' : 'password'}
+                    type={showPassword ? 'text' : 'password'}
                     name='password'
                     onChange={formik.handleChange}
                     value={formik.values.password}/>
                 <input
                     onChange={() => {
-                        formik.values.showPassword = !formik.values.showPassword;
+                        setShowPassword(!showPassword)
                     }}
-                    type="checkbox"/>
+                    type='checkbox'
+                    value={showPassword}/>
             </div>
-            <button type='submit'>Зарегистрироваться</button>
+            <button type='submit'>Войти</button>
         </form>
     )
 }
 
-export default UserRegistrationForm;
+export default UserLoginForm;
