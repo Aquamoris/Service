@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import style from './Registration.module.css';
+import style from '../Authentication.module.css';
 import {Switch} from "@mui/material";
-import User from "./User";
+import UserRegistrationForm from "./UserRegistrationForm";
 
 const Registration = (props) => {
     const [toggle, setToggle] = useState(false);
@@ -21,7 +21,7 @@ const Registration = (props) => {
             {
                 toggle
                 ? <h3>Company</h3>
-                : <User users={props.users} registrationNewUser={props.registrationNewUser}/>
+                : <UserRegistrationForm />
             }
 
         </div>

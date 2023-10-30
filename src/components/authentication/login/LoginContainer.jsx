@@ -1,11 +1,12 @@
 import {connect} from "react-redux";
 import {compose} from "redux";
 import Registration from "./Registration";
-import {registrationNewUser} from "../../redux/users-reducer";
+import {registrationNewUser} from "../../../redux/users-reducer";
 
 let mapStateToProps = (state) => {
     return {
-        users: state.usersData.users
+        users: state.usersData.users,
+        companies: state.companiesData.companies
     }
 }
 
