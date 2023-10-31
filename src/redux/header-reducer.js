@@ -18,7 +18,7 @@ const initialState = {
     ],
     companyLinks: [
         {id: 1, title: 'Главная', url: '/'},
-        {id: 2, title: 'Сотрудники', url: '/company/employees'},
+        {id: 2, title: 'Сотрудники', url: '/employees'},
         {id: 3, title: 'Ваши вакансии', url: '/company/vacancies/'},
         {id: 4, title: 'Избранное', url: '/company/favorites/'},
         {id: 4, title: 'О нас', url: '/about'}

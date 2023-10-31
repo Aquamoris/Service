@@ -9,7 +9,7 @@ let mapStateToProps = (state) => {
     }
 }
 
-compose(
+export default compose(
     connect(mapStateToProps, {}),
     withAuth
 )(CompanyVacancies)
