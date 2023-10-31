@@ -12,7 +12,7 @@ const initialState = {
     ],
     employeeLinks: [
         {id: 1, title: 'Главная', url: '/'},
-        {id: 2, title: 'Вакансии', url: '/employee/vacancies'},
+        {id: 2, title: 'Вакансии', url: '/vacancies'},
         {id: 3, title: 'Избранное', url: '/employee/favorites/'},
         {id: 4, title: 'О нас', url: '/about'}
     ],

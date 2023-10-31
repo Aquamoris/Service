@@ -1,0 +1,52 @@
+.wrapper {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.map {
+    width: 500px;
+    height: 600px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.map > img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.smallVacancy {
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 2px 12px #edeff0;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.smallVacancy:nth-child(2n) {
+    margin: 5px 0;
+}
+
+.companyInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.workExperience {
+    margin: 10px 0;
+}
+
+.description {
+    grid-column: 1/3;
+    margin-bottom: 5px;
+}
+
+.contactsButton {
+    margin-left: 10px;
+}
+

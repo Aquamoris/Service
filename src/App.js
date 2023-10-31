@@ -8,6 +8,7 @@ import LoginContainer from "./components/authentication/login/LoginContainer";
 import ProfileContainer from "./components/profile/ProfileContainer";
 import Favorites from "./components/favorites/Favorites";
 import Vacancies from "./components/vacancies/Vacancies";
+import VacansiesContainer from "./components/vacancies/VacansiesContainer";
 
 const App = () => {
     return (
@@ -24,6 +25,8 @@ const App = () => {
 
                              <Route path='/registration' element={<Registration />}></Route>
                              <Route path='/login' element={<LoginContainer />}></Route>
+
+                             <Route path='/vacancies' element={<VacansiesContainer />}></Route>
 
                              <Route path='/employee/favorites/:id' element={<Favorites />}/>
                              <Route path='/company/favorites/:id' element={<Favorites />}/>

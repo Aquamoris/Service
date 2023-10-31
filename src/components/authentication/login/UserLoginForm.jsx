@@ -1,8 +1,13 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useFormik} from "formik";
 
 const UserLoginForm = (props) => {
+    const[currentUser, setCurrentUser] = useState(props.currentUser);
     const [showPassword, setShowPassword] = useState(false);
+
+    useEffect(() => {
+        setCurrentUser(props.currentUser)
+    },[props.currentUser, currentUser]);
 
     const formik = useFormik({
         initialValues: {
@@ -11,7 +16,7 @@ const UserLoginForm = (props) => {
         },
         onSubmit: (values, {resetForm}) => {
             props.checkUser(values.email, values.password);
-            if (props.currentUser) {
+            if (currentUser) {
                 props.changeUser('employee', props.currentUser);
                 resetForm();
             } else {
