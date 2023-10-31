@@ -6,7 +6,7 @@ const CompanyVacancies = (props) => {
         <div style={{width: '60%', margin: '0 auto'}}>
             {
                 props.vacancies.map(e => {
-                    if (e.companyId === props.userData.id) {
+                    if (e.companyId === +props.router.params.id) {
                         return <VacancySmall
                             key={e.id}
                             id={e.id}

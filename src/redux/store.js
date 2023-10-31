@@ -7,6 +7,7 @@ import companiesReducer from "./companies-reducer";
 import vacanciesReducer from "./vacansies-reducer";
 import tagsReducer from "./tags-reducer";
 import resumesReducer from "./resumes-reducer";
+import mainReducer from "./main-reducer";
 
 let reducers = combineReducers({
     header: headerReducer,
@@ -15,6 +16,7 @@ let reducers = combineReducers({
     vacanciesData: vacanciesReducer,
     resumesData: resumesReducer,
     tagsData: tagsReducer,
+    mainData: mainReducer,
     authData: authReducer
 });
 

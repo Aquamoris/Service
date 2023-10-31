@@ -1,17 +1,15 @@
 import {compose} from "redux";
-import CompanyVacancies from "./CompanyVacancies";
-import {withAuth} from "../../hoc/withAuth";
+import Company from "./Company";
 import {connect} from "react-redux";
 import {withRouter} from "../../hoc/withRouter";
 
 let mapStateToProps = (state) => {
     return {
-        vacancies: state.vacanciesData.vacancies
+        companies: state.companiesData.companies
     }
 }
 
 export default compose(
     connect(mapStateToProps, {}),
-    withRouter,
-    withAuth
-)(CompanyVacancies)
+    withRouter
+)(Company)
